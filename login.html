@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background: #f4f4f4; }
+        .container { width: 300px; padding: 20px; background: white; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 8px; }
+        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
+        button { width: 100%; padding: 10px; background: blue; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .error { color: red; font-size: 12px; }
+        .password-criteria { font-size: 12px; color: #555; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container" id="loginContainer">
+        <h2>Login</h2>
+        <input type="email" id="loginEmail" placeholder="Email">
+        <p class="error" id="loginEmailError"></p>
+        <input type="password" id="loginPassword" placeholder="Password">
+        <p class="error" id="loginPasswordError"></p>
+        <button onclick="validateLogin()">Login</button>
+        <p><a href="#" onclick="toggleForm()">Don't have an account? Sign up</a></p>
+    </div>
+
+    <div class="container" id="signupContainer" style="display: none;">
+        <h2>Sign Up</h2>
+        <input type="text" id="signupName" placeholder="Full Name">
+        <p class="error" id="signupNameError"></p>
+        <input type="email" id="signupEmail" placeholder="Email">
+        <p class="error" id="signupEmailError"></p>
+        <p class="password-criteria">Password must be at least 6 characters long and contain at least 1 uppercase, 1 lowercase, 1 number, and 1 symbol.</p>
+        <input type="password" id="signupPassword" placeholder="Password">
+        <p class="error" id="signupPasswordError"></p>
+        <input type="password" id="signupConfirmPassword" placeholder="Confirm Password">
+        <p class="error" id="signupConfirmPasswordError"></p>
+        <button onclick="validateSignup()">Sign Up</button>
+        <p><a href="#" onclick="toggleForm()">Already have an account? Login</a></p>
+    </div>
+
+    <script>
+        function toggleForm() {
+            document.getElementById('loginContainer').style.display = 
+                document.getElementById('loginContainer').style.display === 'none' ? 'block' : 'none';
+            document.getElementById('signupContainer').style.display = 
+                document.getElementById('signupContainer').style.display === 'none' ? 'block' : 'none';
+        }
+
+        function validateLogin() {
+            let email = document.getElementById('loginEmail').value;
+            let password = document.getElementById('loginPassword').value;
+            document.getElementById('loginEmailError').innerText = email ? '' : 'Email is required';
+            document.getElementById('loginPasswordError').innerText = password ? '' : 'Password is required';
+        }
+
+        function validateSignup() {
+            let name = document.getElementById('signupName').value;
+            let email = document.getElementById('signupEmail').value;
+            let password = document.getElementById('signupPassword').value;
+            let confirmPassword = document.getElementById('signupConfirmPassword').value;
+            
+            document.getElementById('signupNameError').innerText = name ? '' : 'Name is required';
+            document.getElementById('signupEmailError').innerText = validateEmail(email) ? '' : 'Invalid email format';
+            document.getElementById('signupPasswordError').innerText = validatePassword(password) ? '' : 'Password must contain at least 1 uppercase, 1 lowercase, 1 number, and 1 symbol.';
+            document.getElementById('signupConfirmPasswordError').innerText = (password === confirmPassword) ? '' : 'Passwords do not match';
+        }
+
+        function validateEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function validatePassword(password) {
+            return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/.test(password);
+        }
+    </script>
+</body>
+</html>

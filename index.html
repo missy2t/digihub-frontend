@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digi Hub - Digital Study Material Marketplace</title>
+    <link rel="stylesheet" href="GS.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <img src="/Digihub.jpg" alt="Digi Hub Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="Aboutus.html">About Us </a></li>
+            <li><a href="Faq.html">FAQs</a></li>
+            <li><a href="Contactus.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section with Background Image -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Digi Hub</h1>
+            <p>Your ultimate destination for high-quality digital study materials. Browse, buy, or sell resources to ace your exams!</p>
+            <a href="login.html" class="cta-button">Login/Signup</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature">
+            <h3>Wide Selection</h3>
+            <p>Access a vast library of study materials, from lecture notes to practice exams.</p>
+        </div>
+        <div class="feature">
+            <h3>Affordable Prices</h3>
+            <p>Get high-quality resources at student-friendly prices.</p>
+        </div>
+        <div class="feature">
+            <h3>Easy Upload</h3>
+            <p>Sell your own materials quickly and securely.</p>
+        </div>
+        <div class="feature">
+            <h3>24/7 Access</h3>
+            <p>Download and study anytime, anywhere.</p>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top" onclick="scrollToTop()">↑</div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Digi Hub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Scroll to Top Functionality
+        const scrollToTopBtn = document.querySelector('.scroll-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>

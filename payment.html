@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Checkout</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Lexend Deca";
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      main {
+        display: flex;
+        padding: 3px;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid black;
+        border-radius: 10px;
+      }
+
+      .info-section {
+        background-color: #edeef4;
+        padding: 90px 30px;
+      }
+
+      .checkout-info {
+        margin: 0 55px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+      }
+
+      .item-image {
+        height: 300px;
+        width: 95%;
+        object-fit: cover;
+      }
+
+      .field-name {
+        color: #000000b9;
+      }
+
+      .pay-button {
+        all: unset;
+        margin-top: 20px;
+        background-color: #a7c7e7;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      .form-input {
+        height: 30px;
+        width: 100%;
+      }
+
+      @media (max-width: 962px) {
+        main {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="info-section">
+        <h1>Economics final exam</h1>
+        <h3>150 birr</h3>
+        <img
+          src="https://cdn.corporatefinanceinstitute.com/assets/economics.jpeg"
+          alt=""
+          class="item-image"
+        />
+      </section>
+      <section class="checkout-info">
+        <div class="form-boxes">
+          <div>
+            <p class="field-name">Name</p>
+            <input class="form-input" type="text" name="" id="" />
+          </div>
+          <div>
+            <p class="field-name">Phone number</p>
+            <input class="form-input" type="text" name="" id="" />
+          </div>
+          <div>
+            <p class="field-name">School ID</p>
+            <input class="form-input" type="text" name="" id="" />
+          </div>
+        </div>
+
+        <form method="POST" action="https://api.chapa.co/v1/hosted/pay">
+          <input
+            type="hidden"
+            name="public_key"
+            value="CHAPUBK_TEST-tvnFtbGpku9UV7V04hHRpKQwFxTBBT8i"
+          />
+          <input type="hidden" name="tx_ref" value="negade-tx-123nqwdqdrge" />
+          <input type="hidden" name="amount" value="5400" />
+          <input type="hidden" name="currency" value="ETB" />
+          <input type="hidden" name="email" value="birrletej12@gmail.com" />
+          <input type="hidden" name="first_name" value="Israel" />
+          <input type="hidden" name="last_name" value="Goytom" />
+          <input type="hidden" name="title" value="Let us do this" />
+          <input
+            type="hidden"
+            name="description"
+            value="Paying for economics"
+          />
+          <input
+            type="hidden"
+            name="logo"
+            value="https://chapa.link/asset/images/chapa_swirl.svg"
+          />
+          <input
+            type="hidden"
+            name="callback_url"
+            value="https://example.com/callbackurl"
+          />
+          <input
+            type="hidden"
+            name="return_url"
+            value="https://example.com/returnurl"
+          />
+          <input type="hidden" name="meta[title]" value="test" />
+          <button class="pay-button" type="submit">Pay 150 birr Now</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
