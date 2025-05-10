@@ -1,0 +1,107 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0f172a; /* Dark blue-black */
+  color: #e2e8f0;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #1e293b; /* Navy-blue */
+  color: #38bdf8; /* Cyan */
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #334155;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #1e293b;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.filters select,
+.filters input,
+.filters button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #0f172a;
+  color: #f1f5f9;
+  border: 1px solid #334155;
+  border-radius: 4px;
+}
+
+.filters button {
+  background-color: #2563eb;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.filters button:hover {
+  background-color: #1d4ed8;
+}
+
+.materials {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.material-card {
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  position: relative;
+  transition: 0.3s;
+}
+
+.material-card:hover {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.material-card h3 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #60a5fa; /* Light blue */
+}
+
+.material-card p {
+  font-size: 14px;
+  color: #cbd5e1;
+  margin: 6px 0;
+}
+
+.material-card .download-btn {
+  margin-top: 10px;
+  background-color: #38bdf8;
+  color: #0f172a;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.material-card .download-btn:hover {
+  background-color: #0ea5e9;
+}
+
+.material-card .locked {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ef4444; /* Red badge */
+  color: white;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+}
