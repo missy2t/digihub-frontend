@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Study Material</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Upload Your Educational Material</h2>
+        <p>Share your knowledge and earn by helping other students learn!</p>
+
+        <form id="uploadForm">
+            <label for="title">File Title:</label>
+            <input type="text" id="title" name="title" placeholder="Enter material title" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" placeholder="Describe your material" required></textarea>
+
+            <label for="file">Upload File:</label>
+            <div id="dropArea">
+                <p>Drag and drop your file here, or click to browse</p>
+                <input type="file" id="file" name="file" accept=".pdf,.doc,.docx,.ppt,.pptx,.txt" required>
+            </div>
+
+            <div id="filePreview">
+                <p>No file selected</p>
+            </div>
+
+            <label for="price">Price (Birr):</label>
+            <input type="number" id="price" name="price" placeholder="Set your price" min="0" step="0.01" required>
+
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+
+            <div class="buttons">
+                <button type="button" id="cancelBtn">Cancel</button>
+                <button type="submit">Upload Material</button>
+            </div>
+        </form>
+
+        <div id="uploadStatus"></div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <div>
+                <p><strong><a href="my-uploads.html">My Uploads</a></strong></p>
+                <p>Manage your uploaded materials</p>
+            </div>
+            <div>
+                <p><strong><a href="analytics.html">Analytics</a></strong></p>
+                <p>Track your revenue performance</p>
+            </div>
+            <div>
+                <p><strong><a href="earnings.html">Earnings</a></strong></p>
+                <p>Monitor your revenue and payouts</p>
+            </div>
+        </div>
+        <p class="footer-text">© 2025 Digi Hub. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
