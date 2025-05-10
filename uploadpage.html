@@ -64,5 +64,37 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', async function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const formData = new FormData();
+            formData.append('title', document.getElementById('title').value);
+            formData.append('description', document.getElementById('description').value);
+            formData.append('price', document.getElementById('price').value);
+            formData.append('file', document.getElementById('file').files[0]);
+
+            try {
+                const response = await fetch('http://localhost:8080/api/uploads/upload', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': 'Bearer ' + localStorage.getItem('token'), // Include token for authentication
+                    },
+                    body: formData,
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    document.getElementById('uploadStatus').innerText = 'Upload successful!';
+                } else {
+                    document.getElementById('uploadStatus').innerText = `Error: ${result.message}`;
+                }
+            } catch (error) {
+                console.error('Error uploading file:', error);
+                document.getElementById('uploadStatus').innerText = 'An error occurred during upload.';
+            }
+        });
+    </script>
 </body>
 </html>
