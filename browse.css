@@ -14,6 +14,40 @@ header {
   border-bottom: 1px solid #334155;
 }
 
+/* Navigation bar styling */
+.browse-nav {
+  background-color: #333;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #575757;
+}
+
 .filters {
   display: flex;
   gap: 10px;
@@ -104,4 +138,137 @@ header {
   padding: 5px 8px;
   border-radius: 5px;
   font-size: 12px;
+}
+
+/* Updated styles for the material viewer modal */
+#materialViewer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1e293b;
+  color: #e2e8f0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  width: 90%;
+  max-width: 800px; /* Increased max width */
+  height: 80%; /* Added height for better readability */
+  overflow-y: auto; /* Enable scrolling for content */
+  display: none;
+}
+
+#materialViewer.visible {
+  display: block;
+}
+
+/* Font size controls */
+.font-size-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.font-size-controls button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.font-size-controls button:hover {
+  background-color: #1d4ed8;
+}
+
+.viewer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.viewer-header h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #38bdf8;
+}
+
+.viewer-header button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.viewer-header button:hover {
+  background-color: #1d4ed8;
+}
+
+#materialPreview p {
+  margin: 10px 0;
+}
+
+.blurred {
+  filter: blur(5px);
+  color: #94a3b8;
+}
+
+#payButton {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+#payButton:hover {
+  background-color: #1d4ed8;
+}
+
+/* Styles for material items */
+.material-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1e293b;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  transition: 0.3s;
+  text-align: center;
+}
+
+.material-item:hover {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.material-item img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.material-item h4 {
+  font-size: 18px;
+  color: #60a5fa;
+  margin: 10px 0 5px;
+}
+
+.material-item p {
+  font-size: 14px;
+  color: #cbd5e1;
+  margin: 5px 0;
 }

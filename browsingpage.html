@@ -7,13 +7,22 @@
   <link rel="stylesheet" href="browse.css" />
 </head>
 <body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Aboutus.html">About Us</a></li>
+      <li><a href="Faq.html">FAQ</a></li>
+      <li><a href="Contactus.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
   <header>
     <h1>Digi Hub</h1>
     <p>Browse and filter study materials</p>
   </header>
 
   <section class="filters">
-    <select id="department">
+    <select id="department" name="department">
       <option value="">-- Select Department --</option>
       <option value="Economics">Economics</option>
       <option value="Business Administration and Information System">Business Administration and Information System</option>
@@ -22,7 +31,7 @@
       <option value="Management">Management</option>
     </select>
 
-    <select id="year">
+    <select id="year" name="year">
       <option value="">-- Select Year --</option>
       <option value="Year 1">Year 1</option>
       <option value="Year 2">Year 2</option>
@@ -31,14 +40,29 @@
       <option value="Year 5">Year 5</option>
     </select>
 
-    <input type="text" id="course-search" placeholder="Search course name..." />
+    <input type="text" id="course-search" name="course-search" placeholder="Search course name..." />
 
     <button onclick="filterMaterials()">Search</button>
+    <button id="uploadMaterialButton" onclick="window.location.href='uploadpage.html'">Upload Your Material</button>
   </section>
 
   <section class="materials" id="materials-container">
-    <!-- Filtered results go here -->
+    <!-- Filtered results will be dynamically loaded here -->
   </section>
+
+  <div id="materialViewer" class="hidden">
+    <div class="viewer-header">
+      <h3 id="materialTitle">Material Title</h3>
+      <button id="closeViewer">Close</button>
+    </div>
+    <div id="materialContent">
+      <p id="materialDescription">Material description will appear here...</p>
+      <div id="materialPreview">
+        <p>Preview of the material content...</p>
+      </div>
+    </div>
+    <button id="payButton">Pay to Unlock Full Content</button>
+  </div>
 
   <script src="browse.js"></script>
 </body>
